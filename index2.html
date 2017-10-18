@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>title</title>
+    <style>
+        body,input,p,h3,div{padding:0;margin:0;}
+        .fl{float:left;}
+        .fr{float:right;}
+        .clear{clear:both;}
+        p{font-size: 12px;}
+        body{margin:30px auto;width:998px;}
+        a{text-decoration: none;}
+        .select,.number{margin:8px 0;}
+        /*.part{margin:20px;}*/
+        .part p{display: inline-block;}
+        .add ,.minus {display:inline-block;width:20px;height:20px;
+            border:1px solid black;border-radius: 2px;text-align: center;
+            line-height: 20px;cursor:pointer ;}
+        .score{display:inline-block;width:80px;height:20px;
+            border:1px solid black;border-radius: 2px;text-align: center;
+            line-height: 20px;cursor:pointer ;}
+
+        .goods{border:#ccc solid 1px;background-color: #fcfcfc;position: relative;
+            height:105px;width:998px;margin-bottom:20px;}
+        .goods input{display: inline-block;margin-top:20px;margin-right:10px;
+            width:45px;}
+        .gs-part{padding-top:8px;width:600px;}
+        /*.gs-part a{width:500px;}*/
+        .gs-part img{margin-right:8px;float:left;}
+        /*.gs-part a{width:870px;}*/
+        .position{position:absolute;right:0px;top:30px;}
+        .price{color:red ;font-size: 30px;}
+        .allM{position: relative;}
+        .allM div{position: absolute;right:0;}
+        .allM span{width:110px;display: inline-block;}
+        #money{font-size: 40px;color:red;}
+    </style>
+    <script type="text/javascript" src="myjs.js" ></script>
+</head>
+<body>
+<div class="part clear">
+    <div class="select fl">
+        <input type="checkbox" class="shopCheck" >
+        <p>店铺：我的我的我的</p>
+    </div>
+    <div class="number fr">
+        <a href="#" class="minus">-</a>
+        <a href="#" class="score">1</a>
+        <a href="#" class="add">+</a>
+    </div>
+</div>
+<div class="goods clear">
+    <input class="fl check" type="checkbox">
+    <div class="gs-part">
+        <img src="phone.png" alt="" style="border:#ccc solid 1px;">
+        <a href="#">夏日拖鞋潮男韩版潮流男士一字拖防滑凉鞋夏天个性沙滩潮拖凉拖男</a>
+        <div>
+            <p>颜色分类：028黑蜂窝
+                尺码：41 <br>
+                ￥<span class="discount">50.00</span> <del>￥79.00</del>
+            </p>
+        </div>
+        <div class="position">
+            <span>￥</span><span class="price">50.00</span>
+        </div>
+    </div>
+</div>
+
+<div class="part clear">
+    <div class="select fl">
+        <input type="checkbox" class="shopCheck" >
+        <p>店铺：我的我的我的</p>
+    </div>
+    <div class="number fr">
+        <a href="#" class="minus">-</a>
+        <a href="#" class="score">1</a>
+        <a href="#" class="add">+</a>
+    </div>
+</div>
+<div class="goods clear">
+    <input class="fl check" type="checkbox">
+    <div class="gs-part">
+        <img src="phone.png" alt="" style="border:#ccc solid 1px;">
+        <a href="#">夏日拖鞋潮男韩版潮流男士一字拖防滑凉鞋夏天个性沙滩潮拖凉拖男</a>
+        <div>
+            <p>颜色分类：028黑蜂窝
+                尺码：41 <br>
+                ￥<span class="discount">20.00</span> <del>￥79.00</del>
+            </p>
+        </div>
+        <div class="position">
+            <span>￥</span><span class="price">20.00</span>
+        </div>
+    </div>
+</div>
+
+<div class="part clear">
+    <div class="select fl">
+        <input type="checkbox" class="shopCheck" >
+        <p>店铺：我的我的我的</p>
+    </div>
+    <div class="number fr">
+        <a href="#" class="minus">-</a>
+        <a href="#" class="score">1</a>
+        <a href="#" class="add">+</a>
+    </div>
+</div>
+<div class="goods clear">
+    <input class="fl check" type="checkbox">
+    <div class="gs-part">
+        <img src="phone.png" alt="" style="border:#ccc solid 1px;">
+        <a href="#">夏日拖鞋潮男韩版潮流男士一字拖防滑凉鞋夏天个性沙滩潮拖凉拖男</a>
+        <div>
+            <p>颜色分类：028黑蜂窝
+                尺码：41 <br>
+                ￥<span class="discount">10.00</span> <del>￥79.00</del>
+            </p>
+        </div>
+        <div class="position">
+            <span>￥</span><span class="price">10.00</span>
+        </div>
+    </div>
+</div>
+<div class="allM">
+    <div>
+        <span>总价格</span><p id="money">0.00</p>
+    </div>
+</div>
+</body>
+</html>
