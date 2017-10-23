@@ -17,115 +17,225 @@
         .add ,.minus {display:inline-block;width:20px;height:20px;
             border:1px solid black;border-radius: 2px;text-align: center;
             line-height: 20px;cursor:pointer ;}
-        .score{display:inline-block;width:80px;height:20px;
-            border:1px solid black;border-radius: 2px;text-align: center;
-            line-height: 20px;cursor:pointer ;}
+
+        .number{margin:37px 0 0 15px;;}
+        .score{width:50px;height:20px;border:1px solid black;
+            vertical-align: top;
+           text-align: center;cursor:pointer ;
+        }
 
         .goods{border:#ccc solid 1px;background-color: #fcfcfc;position: relative;
             height:105px;width:998px;margin-bottom:20px;}
-        .goods input{display: inline-block;margin-top:20px;margin-right:10px;
+        .goods .check{display: inline-block;margin-top:20px;margin-right:10px;
             width:45px;}
         .gs-part{padding-top:8px;width:600px;}
-        /*.gs-part a{width:500px;}*/
         .gs-part img{margin-right:8px;float:left;}
-        /*.gs-part a{width:870px;}*/
-        .position{position:absolute;right:0px;top:30px;}
-        .price{color:red ;font-size: 30px;}
-        .allM{position: relative;}
-        .allM div{position: absolute;right:0;}
-        .allM span{width:110px;display: inline-block;}
-        #money{font-size: 40px;color:red;}
+        .position{position:absolute;right:10px;top:30px;}
+        .position p{display: inline-block;margin-left:20px;cursor:pointer ;}
+        .price{color:red ;font-size: 26px;}
+
+        .bottom{width:1000px;height:60px;background-color: #e5e5e5;margin:0 auto;
+        line-height: 60px;position:fixed;z-index: 1;top:576px;}
+        .allM , #AllSel , #allNum {width:200px;height:60px;}
+        #AllSel{line-height: 70px;}
+        #money,#number{font-size: 30px;color:red;}
     </style>
-    <script type="text/javascript" src="myjs.js" ></script>
+    <script type="text/javascript" src="taobao.js" ></script>
 </head>
-<body>
-<div class="part clear">
-    <div class="select fl">
-        <input type="checkbox" class="shopCheck" >
-        <p>店铺：我的我的我的</p>
+<body id="body">
+<div class="partGoods">
+    <div class="part clear">
+        <div class="select fl">
+            <input type="checkbox" class="shopCheck" name="selectAll">
+            <p>店铺：我的我的我的</p>
+        </div>
     </div>
-    <div class="number fr">
-        <a href="#" class="minus">-</a>
-        <a href="#" class="score">1</a>
-        <a href="#" class="add">+</a>
-    </div>
-</div>
-<div class="goods clear">
-    <input class="fl check" type="checkbox">
-    <div class="gs-part">
-        <img src="phone.png" alt="" style="border:#ccc solid 1px;">
-        <a href="#">夏日拖鞋潮男韩版潮流男士一字拖防滑凉鞋夏天个性沙滩潮拖凉拖男</a>
-        <div>
-            <p>颜色分类：028黑蜂窝
-                尺码：41 <br>
-                ￥<span class="discount">50.00</span> <del>￥79.00</del>
-            </p>
+    <div class="goods clear">
+        <input class="fl check" type="checkbox" name="selectAll">
+        <div class="gs-part fl">
+            <img src="phone.png" alt="" style="border:#ccc solid 1px;">
+            <a href="#">夏日拖鞋潮男韩版潮流男士一字拖防滑凉鞋夏天个性沙滩潮拖凉拖男</a>
+            <div>
+                <p>颜色分类：028黑蜂窝
+                    尺码：41 <br>
+                    ￥<span class="discount">50.00</span> <del>￥79.00</del>
+                </p>
+            </div>
+        </div>
+        <div class="number fl">
+            <a href="javascript:void(0)" class="minus">-</a>
+            <input type="text" class="score" value="1">
+            <a href="javascript:void(0)" class="add">+</a>
         </div>
         <div class="position">
             <span>￥</span><span class="price">50.00</span>
+            <p>删除</p>
         </div>
     </div>
 </div>
 
-<div class="part clear">
-    <div class="select fl">
-        <input type="checkbox" class="shopCheck" >
-        <p>店铺：我的我的我的</p>
+<div class="partGoods">
+    <div class="part clear">
+        <div class="select fl">
+            <input type="checkbox" class="shopCheck" name="selectAll">
+            <p>店铺：我的我的我的</p>
+        </div>
     </div>
-    <div class="number fr">
-        <a href="#" class="minus">-</a>
-        <a href="#" class="score">1</a>
-        <a href="#" class="add">+</a>
-    </div>
-</div>
-<div class="goods clear">
-    <input class="fl check" type="checkbox">
-    <div class="gs-part">
-        <img src="phone.png" alt="" style="border:#ccc solid 1px;">
-        <a href="#">夏日拖鞋潮男韩版潮流男士一字拖防滑凉鞋夏天个性沙滩潮拖凉拖男</a>
-        <div>
-            <p>颜色分类：028黑蜂窝
-                尺码：41 <br>
-                ￥<span class="discount">20.00</span> <del>￥79.00</del>
-            </p>
+    <div class="goods clear">
+        <input class="fl check" type="checkbox" name="selectAll">
+        <div class="gs-part fl">
+            <img src="phone.png" alt="" style="border:#ccc solid 1px;">
+            <a href="#">夏日拖鞋潮男韩版潮流男士一字拖防滑凉鞋夏天个性沙滩潮拖凉拖男</a>
+            <div>
+                <p>颜色分类：028黑蜂窝
+                    尺码：41 <br>
+                    ￥<span class="discount">20.00</span> <del>￥79.00</del>
+                </p>
+            </div>
+        </div>
+        <div class="number fl">
+            <a href="javascript:void(0)" class="minus">-</a>
+            <input type="text" class="score" value="1">
+            <a href="javascript:void(0)" class="add">+</a>
         </div>
         <div class="position">
             <span>￥</span><span class="price">20.00</span>
+            <p>删除</p>
+        </div>
+    </div>
+    <div class="goods clear">
+        <input class="fl check" type="checkbox" name="selectAll">
+        <div class="gs-part fl">
+            <img src="phone.png" alt="" style="border:#ccc solid 1px;">
+            <a href="#">夏日拖鞋潮男韩版潮流男士一字拖防滑凉鞋夏天个性沙滩潮拖凉拖男</a>
+            <div>
+                <p>颜色分类：028黑蜂窝
+                    尺码：41 <br>
+                    ￥<span class="discount">30.00</span> <del>￥79.00</del>
+                </p>
+            </div>
+        </div>
+        <div class="number fl">
+            <a href="javascript:void(0)" class="minus">-</a>
+            <input type="text" class="score" value="1">
+            <a href="javascript:void(0)" class="add">+</a>
+        </div>
+        <div class="position">
+            <span>￥</span><span class="price">30.00</span>
+            <p>删除</p>
         </div>
     </div>
 </div>
 
-<div class="part clear">
-    <div class="select fl">
-        <input type="checkbox" class="shopCheck" >
-        <p>店铺：我的我的我的</p>
+<div class="partGoods">
+    <div class="part clear">
+        <div class="select fl">
+            <input type="checkbox" class="shopCheck" name="selectAll">
+            <p>店铺：我的我的我的</p>
+        </div>
     </div>
-    <div class="number fr">
-        <a href="#" class="minus">-</a>
-        <a href="#" class="score">1</a>
-        <a href="#" class="add">+</a>
-    </div>
-</div>
-<div class="goods clear">
-    <input class="fl check" type="checkbox">
-    <div class="gs-part">
-        <img src="phone.png" alt="" style="border:#ccc solid 1px;">
-        <a href="#">夏日拖鞋潮男韩版潮流男士一字拖防滑凉鞋夏天个性沙滩潮拖凉拖男</a>
-        <div>
-            <p>颜色分类：028黑蜂窝
-                尺码：41 <br>
-                ￥<span class="discount">10.00</span> <del>￥79.00</del>
-            </p>
+    <div class="goods clear">
+        <input class="fl check" type="checkbox" name="selectAll">
+        <div class="gs-part fl">
+            <img src="phone.png" alt="" style="border:#ccc solid 1px;">
+            <a href="#">夏日拖鞋潮男韩版潮流男士一字拖防滑凉鞋夏天个性沙滩潮拖凉拖男</a>
+            <div>
+                <p>颜色分类：028黑蜂窝
+                    尺码：41 <br>
+                    ￥<span class="discount">10.11</span> <del>￥79.00</del>
+                </p>
+            </div>
+        </div>
+        <div class="number fl">
+            <a href="javascript:void(0)" class="minus">-</a>
+            <input type="text" class="score" value="1">
+            <a href="javascript:void(0)" class="add">+</a>
         </div>
         <div class="position">
-            <span>￥</span><span class="price">10.00</span>
+            <span>￥</span><span class="price">10.11</span>
+            <p>删除</p>
         </div>
     </div>
 </div>
-<div class="allM">
-    <div>
-        <span>总价格</span><p id="money">0.00</p>
+
+<div class="bottom">
+    <div class="allM fr">
+        <div>
+            <span>总价格</span><span id="money">0.00</span>
+        </div>
+    </div>
+    <div id="AllSel" class="fl">
+        <input type="checkbox" id="as" name="select">
+        <label for="as">全选</label>
+    </div>
+    <div id="allNum" class="fr">
+        <span>已选商品</span><span id="number">0</span><span>件</span>
     </div>
 </div>
+
+
+
+
+<!--<div class="partGoods">-->
+<!--<div class="part clear">-->
+<!--<div class="select fl">-->
+<!--<input type="checkbox" class="shopCheck" name="selectAll">-->
+<!--<p>店铺：我的我的我的</p>-->
+<!--</div>-->
+<!--<div class="number fr">-->
+<!--<a href="#" class="minus">-</a>-->
+<!--<input type="text" class="score" value="1">-->
+<!--<a href="#" class="add">+</a>-->
+<!--</div>-->
+<!--</div>-->
+<!--<div class="goods clear">-->
+<!--<input class="fl check" type="checkbox" name="selectAll">-->
+<!--<div class="gs-part">-->
+<!--<img src="phone.png" alt="" style="border:#ccc solid 1px;">-->
+<!--<a href="#">夏日拖鞋潮男韩版潮流男士一字拖防滑凉鞋夏天个性沙滩潮拖凉拖男</a>-->
+<!--<div>-->
+<!--<p>颜色分类：028黑蜂窝-->
+<!--尺码：41 <br>-->
+<!--￥<span class="discount">20.00</span> <del>￥79.00</del>-->
+<!--</p>-->
+<!--</div>-->
+<!--<div class="position">-->
+<!--<span>￥</span><span class="price">20.00</span>-->
+<!--<p>删除</p>-->
+<!--</div>-->
+<!--</div>-->
+<!--</div>-->
+<!--</div>-->
+
+<!--<div class="partGoods">-->
+<!--<div class="part clear">-->
+<!--<div class="select fl">-->
+<!--<input type="checkbox" class="shopCheck" name ="selectAll">-->
+<!--<p>店铺：我的我的我的</p>-->
+<!--</div>-->
+<!--<div class="number fr">-->
+<!--<a href="#" class="minus">-</a>-->
+<!--<input type="text" class="score" value="1">-->
+<!--<a href="#" class="add">+</a>-->
+<!--</div>-->
+<!--</div>-->
+<!--<div class="goods clear">-->
+<!--<input class="fl check" type="checkbox" name="selectAll">-->
+<!--<div class="gs-part">-->
+<!--<img src="phone.png" alt="" style="border:#ccc solid 1px;">-->
+<!--<a href="#">夏日拖鞋潮男韩版潮流男士一字拖防滑凉鞋夏天个性沙滩潮拖凉拖男</a>-->
+<!--<div>-->
+<!--<p>颜色分类：028黑蜂窝-->
+<!--尺码：41 <br>-->
+<!--￥<span class="discount">10.11</span> <del>￥79.00</del>-->
+<!--</p>-->
+<!--</div>-->
+<!--<div class="position">-->
+<!--<span>￥</span><span class="price">10.11</span>-->
+<!--<p>删除</p>-->
+<!--</div>-->
+<!--</div>-->
+<!--</div>-->
+<!--</div>-->
 </body>
 </html>
