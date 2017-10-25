@@ -139,35 +139,7 @@ window.onload = function(){
 //店铺勾选
         function shopsel(){
             for(let i = 0 ; i< shopC.length ; i++){     //只有三个
-                shopC[i].addEventListener("click",function(){              //店铺添加事件
-
-            //        var checkNum = document.querySelectorAll(".partGoods") ;//每个商品都是一个块
-            //        var number = checkNum[i].querySelectorAll(".check") ;  //取块中的check
-            //        var value = shopC[i].checked ;              //每个块中店铺的check值
-            //        //alert(shopC.length);
-            //        var discount = checkNum[i].getElementsByClassName("discount") ; //单价
-            //        var price = checkNum[i].getElementsByClassName("price") ; //结算价格
-            //        var score = checkNum[i].querySelectorAll(".score") ; //数量
-            //        var AllNum = 0 ;
-            //        for(let i = 0 ; i < number.length ; i++){  //给块中的check都设置为true
-            //            number[i].checked = value ;    //全选
-            //            var Price= parseFloat(price[i].innerText) ; //当前商品总价格
-            //            var allm = parseFloat(allmoney.innerHTML) ; //结算总价格
-            ////个数
-            //            var num = parseInt(score[i].value);
-            //            var AllNum = parseInt(selportnme.innerHTML) ;   //总个数
-            //            if(value){  //为true则加
-            //                allm+=Price ;
-            //                allmoney.innerHTML = changeFloat(allm) ;
-            //                AllNum+=num ;
-            //                selportnme.innerHTML = AllNum ;
-            //            }else{    //为false则减
-            //                allm-=Price ;
-            //                allmoney.innerHTML = changeFloat(allm) ;
-            //                AllNum-=num ;
-            //                selportnme.innerHTML = AllNum ;
-            //            }
-            //        }
+                shopC[i].addEventListener("click",function(){  //店铺添加事件
                     allSelect(i);
                     checkAll(shopC,shopC,allSel);
                 })
@@ -175,7 +147,6 @@ window.onload = function(){
         }
         shopsel();
         function allSelect(i){
-    //for(let i = 0 ; i< shopC.length ; i++){
         var checkNum = document.querySelectorAll(".partGoods") ;//每个商品都是一个块
         var number = checkNum[i].querySelectorAll(".check") ;  //取块中的check
         var value = shopC[i].checked ;              //每个块中店铺的check值
@@ -216,14 +187,13 @@ window.onload = function(){
                     checkAll(check,check,allSel);
                     var num = 0 ;
             //var checkNum = document.querySelectorAll(".partGoods") ;  //只有三个
-    //checkd父元素是div.goods,他的父元素是partGoods，然后就可以找checkShop。
+            //checkd父元素是div.goods,他的父元素是partGoods，然后就可以找checkShop。
                     var thisNum = e.target.parentElement.parentElement;  //partGoods
                     var number = thisNum.querySelectorAll(".check");
                     var shopNumber = thisNum.querySelector(".shopCheck");
-                    //var number = goods[i].querySelectorAll(".check") ;
                     var checkNum = number.length ;
                     //alert(number.length);   //当前part中有多少个check
-//通过num数来确定当前店铺下有多少个check被选中
+                    //通过num数来确定当前店铺下有多少个check被选中
                     for(let i = 0 ; i < checkNum ; i++){
                         if(number[i].checked == true){
                             num++ ;
@@ -232,16 +202,8 @@ window.onload = function(){
                    if(check[i].checked == true) {
                        getCountMoney(i, check[i].checked);
                        if( num == checkNum){
-                           //当part下的所有check为true，shopC才为true。
-                           //下面的i和goods中的i不一样，取当前元素的父元素，在父元素中找shopC
-                           //checkd父元素是div.goods,他的父元素是partGoods，然后就可以找checkShop。
-                           //这里的i已经是2了。因为第二个店铺有两个商品，这里的值不是1.
                            shopNumber.checked = true;  //将店铺的checkbox勾选
                        }
-                       //else{
-                       //    shopNumber.checked = false;
-                       //    getCountMoney(i);
-                       //}
                    }else {
                        shopNumber.checked = false;
                        getCountMoney(i);
@@ -251,9 +213,7 @@ window.onload = function(){
     }
         sel();
         function selprice(val){
-            //for(let i = 0 ; i < goods.length ; i++) {
             for(let i = 0 ; i < shopC.length ; i++) {
-                //if(val == true && check[i].checked == false){
                 if(val){
                     shopC[i].checked = val;    //勾选店铺的checkbox,店铺数少于商品数
                     allSelect(i);
@@ -265,7 +225,7 @@ window.onload = function(){
         }
 //总价格计算
         function getCountMoney(i,val){
-//取数量
+            //取数量
             var score = goods[i].querySelector(".score"); //score有四个
             var num = parseInt(score.value);
             //应该还取一个总价格。
@@ -289,7 +249,7 @@ window.onload = function(){
         }
         allsel();
 //总个数
-        function allNum(val){                  //其实还要判断是全选还是单选
+        function allNum(val){      //还要判断是全选还是单选
             var AllNum = num = 0 ;
             if(val != false){
                 for(var i = 0 ; i< goods.length ; i++){
